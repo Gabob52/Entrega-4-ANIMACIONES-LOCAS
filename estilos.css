@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(234, 234, 234);
+    font-family: 'Roboto', sans-serif;
+}
+nav{
+    text-decoration: none;
+    color: #000
+}
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*Header*/
+.title h1{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.9em;
+    text-transform: uppercase;
+}
+
+
+.container{
+    background: white;
+    width: 90%;
+    max-width: 1220px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.container > .header,
+.container > .content,
+.container > .sidebar,
+.container > .footer,
+.container > div {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+.container .header,
+.container .footer {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    grid-column: 1/6;
+    background: #a2b9cb;
+}
+
+.container > .content{
+    grid-column: span 3;
+}
+
+.content > .article{
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    margin-top: 5px;
+    color: #000000;
+}
+.content .article h1,
+.content .article p{
+    padding: 10px;
+}
+
+
+.container > .sidebar{
+    grid-column: span 2;
+    background-color: antiquewhite;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .sidebar img{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.container > .relatedpost{
+    background: #1e272e;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.container > .relatedpost:hover{
+    cursor: pointer;
+    color: #0000;
+    background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+        .header{
+            text-align: center;
+        }
+
+        .container .content{
+            grid-column: 1/-1;
+        }
+
+        .container .sidebar{
+            grid-column: 1/6;
+        }
+
+        .container .relatedpost{
+            grid-column: 1/-1;
+        }
+}
